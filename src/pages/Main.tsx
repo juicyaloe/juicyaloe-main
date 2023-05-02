@@ -8,13 +8,13 @@ import styled from '@emotion/styled';
 export default function Main() {
   return (
     <>
-      <FixedLottie animationData={GressAnimation} />
+      <BackgroundLottie animationData={GressAnimation} />
     </>
   );
 }
 
-const FixedLottie = styled(Lottie)`
-  position: fixed;
+const BackgroundLottie = styled(Lottie)`
+  position: absolute;
   bottom: -5px;
 
   z-index: -1;
