@@ -3,22 +3,33 @@ import {
   BottomButtons,
   MainTextGroup,
 } from '../pages-components/MainPage';
-import { AnimationContainer } from '../components';
+import { FullAnimationContainer, AnimationItem } from '../components';
 
 import type { Variants } from 'framer-motion';
 
 export default function Main() {
   return (
-    <>
+    <FullAnimationContainer variants={start}>
       <BackGround />
 
-      <AnimationContainer variants={wrap}>
+      <AnimationItem variants={wrap}>
         <MainTextGroup />
         <BottomButtons />
-      </AnimationContainer>
-    </>
+      </AnimationItem>
+    </FullAnimationContainer>
   );
 }
+
+const start: Variants = {
+  init: { x: -1000 },
+  show: {
+    x: 0,
+    transition: {
+      duration: 0.5,
+      delayChildren: 0.8,
+    },
+  },
+};
 
 const wrap: Variants = {
   init: { opacity: 1 },
