@@ -1,19 +1,19 @@
 import {
   BackGround,
   BottomButtons,
-  MainTextGroup,
-} from '../pages-components/MainPage';
+  IntroTextGroup,
+} from '../pages-components/IntroPage';
 import { FullAnimationContainer, AnimationItem } from '../components';
 
 import type { Variants } from 'framer-motion';
 
-export default function Main() {
+export default function Intro() {
   return (
     <FullAnimationContainer variants={start}>
       <BackGround />
 
       <AnimationItem variants={wrap}>
-        <MainTextGroup />
+        <IntroTextGroup />
         <BottomButtons />
       </AnimationItem>
     </FullAnimationContainer>

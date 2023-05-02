@@ -1,3 +1,3 @@
 export * from './BackGround';
 export * from './BottomButtons';
-export * from './MainTextGroup';
+export * from './IntroTextGroup';

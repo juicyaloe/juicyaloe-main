@@ -5,9 +5,9 @@ import { AnimationItem } from '../../components';
 
 import styled from '@emotion/styled';
 
-export const MainTextGroup = () => {
+export const IntroTextGroup = () => {
   return (
-    <MainTextGroupWrapper>
+    <IntroTextGroupWrapper>
       <AnimationItem variants={item1}>
         <Typography variant="h6" component="div" sx={{ textAlign: 'center' }}>
           마음 편히, 쉴 수 있는 공간
@@ -37,11 +37,11 @@ export const MainTextGroup = () => {
           천천히 구경 후, 방명록을 남겨주세요.
         </Typography>
       </AnimationItem>
-    </MainTextGroupWrapper>
+    </IntroTextGroupWrapper>
   );
 };
 
-const MainTextGroupWrapper = styled.div`
+const IntroTextGroupWrapper = styled.div`
   padding-top: 50px;
 `;
 

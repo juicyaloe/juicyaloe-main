@@ -6,7 +6,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { AnimatePresence } from 'framer-motion';
 
 import { MobileScreen } from './components';
-import Main from './pages/Main';
+import Intro from './pages/Intro';
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
       <MobileScreen>
         <AnimatePresence>
           <Routes>
-            <Route path="/" element={<Main />} />
+            <Route path="/" element={<Intro />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </AnimatePresence>
