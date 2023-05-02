@@ -3,6 +3,7 @@ import type { Variants } from 'framer-motion';
 
 import { AnimationItem } from '../../components';
 
+import GitHubIcon from '@mui/icons-material/GitHub';
 import styled from '@emotion/styled';
 
 export const BottomButtons = () => {
@@ -13,7 +14,9 @@ export const BottomButtons = () => {
       </AnimationItem>
 
       <AnimationItem variants={item}>
-        <Button variant="contained">Github</Button>
+        <Button variant="contained" startIcon={<GitHubIcon />}>
+          Github
+        </Button>
       </AnimationItem>
     </BottomButtonWrapper>
   );
