@@ -5,16 +5,29 @@ import { AnimationItem } from '../../components';
 
 import GitHubIcon from '@mui/icons-material/GitHub';
 import styled from '@emotion/styled';
+import { useNavigate } from 'react-router-dom';
+import { AppUrl } from '../../common';
 
 export const BottomButtons = () => {
+  const navigate = useNavigate();
+
   return (
     <BottomButtonWrapper>
       <AnimationItem variants={item}>
-        <Button variant="contained">구경하기</Button>
+        <Button variant="contained" onClick={() => navigate(AppUrl.Main)}>
+          구경하기
+        </Button>
       </AnimationItem>
 
       <AnimationItem variants={item}>
-        <Button variant="contained" startIcon={<GitHubIcon />}>
+        <Button
+          variant="contained"
+          onClick={() =>
+            (window.location.href =
+              'https://github.com/juicyaloe/juicyaloe-main')
+          }
+          startIcon={<GitHubIcon />}
+        >
           Github
         </Button>
       </AnimationItem>
