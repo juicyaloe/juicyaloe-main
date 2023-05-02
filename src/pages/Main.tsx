@@ -1,21 +1,31 @@
-import React from 'react';
-import Lottie from 'lottie-react';
+import {
+  BackGround,
+  BottomButtons,
+  MainTextGroup,
+} from '../pages-components/MainPage';
+import { AnimationContainer } from '../components';
 
-import GressAnimation from '../components/lottie/grass.json';
-
-import styled from '@emotion/styled';
+import type { Variants } from 'framer-motion';
 
 export default function Main() {
   return (
     <>
-      <BackgroundLottie animationData={GressAnimation} />
+      <BackGround />
+
+      <AnimationContainer variants={wrap}>
+        <MainTextGroup />
+        <BottomButtons />
+      </AnimationContainer>
     </>
   );
 }
 
-const BackgroundLottie = styled(Lottie)`
-  position: absolute;
-  bottom: -5px;
-
-  z-index: -1;
-`;
+const wrap: Variants = {
+  init: { opacity: 1 },
+  show: {
+    transition: {
+      delayChildren: 0.2,
+      staggerChildren: 0.4,
+    },
+  },
+};

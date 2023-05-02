@@ -3,6 +3,8 @@ import { Route, Routes, Navigate } from 'react-router-dom';
 
 import CssBaseline from '@mui/material/CssBaseline';
 
+import { AnimatePresence } from 'framer-motion';
+
 import { MobileScreen } from './components';
 import Main from './pages/Main';
 
@@ -11,10 +13,12 @@ function App() {
     <Fragment>
       <CssBaseline />
       <MobileScreen>
-        <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="*" element={<Navigate to="/" />} />
-        </Routes>
+        <AnimatePresence>
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="*" element={<Navigate to="/" />} />
+          </Routes>
+        </AnimatePresence>
       </MobileScreen>
     </Fragment>
   );
