@@ -58,6 +58,9 @@ const item: Variants = {
     y: 0,
     transition: {
       type: 'spring',
+
+      repeat: Infinity,
+      repeatDelay: 3.5,
     },
   },
 };
