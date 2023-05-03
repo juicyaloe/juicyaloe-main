@@ -5,10 +5,13 @@ import styled from '@emotion/styled';
 
 import { MyInfoPopupText } from './MyInfoPopup.Text';
 import { MyInfoPopupLink } from './MyInfoPopup.Link';
+
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
+
 import { Color } from '../../styles';
 import { useMode } from '../../provider';
+import { MobileWidth } from '../../components';
 
 export type MyInfoPopupRef = {
   open: () => void;
@@ -60,7 +63,9 @@ export const MyInfoPopup = forwardRef<MyInfoPopupRef>((_, ref) => {
 });
 
 const MyInfoPopupWrapper = styled(motion.div)<{ mode: 'light' | 'dark' }>`
-  position: absolute;
+  position: fixed;
+  max-width: ${MobileWidth}px;
+  margin: 0 auto;
 
   bottom: 30px;
   left: 0;
