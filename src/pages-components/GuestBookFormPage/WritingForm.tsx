@@ -1,13 +1,14 @@
+import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 import AccountCircle from '@mui/icons-material/AccountCircle';
+
 import styled from '@emotion/styled';
 
 import { WritingFormText } from './WritingForm.Text';
-import { useEffect } from 'react';
 
 interface FormField {
   nickname: string;
@@ -80,7 +81,12 @@ export const WritingForm = () => {
           })}
         />
 
-        <SubmitButton variant="outlined" color="primary" type="submit">
+        <SubmitButton
+          variant="outlined"
+          color="primary"
+          type="submit"
+          disabled={isSubmitting}
+        >
           전송
         </SubmitButton>
       </CustomForm>
