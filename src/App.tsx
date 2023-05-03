@@ -10,6 +10,7 @@ import { AppUrl } from './common';
 
 import Intro from './pages/Intro';
 import Main from './pages/Main';
+import GuestBookForm from './pages/GuestBookForm';
 
 function App() {
   const location = useLocation();
@@ -22,6 +23,7 @@ function App() {
           <Routes>
             <Route path={AppUrl.Intro} element={<Intro />} />
             <Route path={AppUrl.Main} element={<Main />} />
+            <Route path={AppUrl.GuestBookForm} element={<GuestBookForm />} />
             <Route path="*" element={<Navigate to={AppUrl.Intro} />} />
           </Routes>
         </AnimatePresence>
