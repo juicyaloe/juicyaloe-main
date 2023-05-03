@@ -10,7 +10,7 @@ export const Color = {
   'toggle-dark': 'rgba(255, 255, 255, 0.4)',
 
   'card-light': '#fff',
-  'card-dark': '#000',
+  'card-dark': '#251749',
 
   'dark-main': '#635985',
   'dark-primary': '#1F8A70',
