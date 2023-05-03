@@ -51,6 +51,8 @@ export const IntroTextGroup = () => {
 
 const IntroTextGroupWrapper = styled.div`
   padding-top: 70px;
+
+  user-select: none;
 `;
 
 const item1: Variants = {

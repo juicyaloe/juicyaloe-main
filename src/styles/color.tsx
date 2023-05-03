@@ -3,6 +3,9 @@ export const Color = {
   white: '#fff',
   orange: '#FFA500',
 
+  'popup-light': '#e6e6e6',
+  'popup-dark': '#251749',
+
   'toggle-light': '#D3D3D3',
   'toggle-dark': 'rgba(255, 255, 255, 0.4)',
 

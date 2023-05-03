@@ -19,7 +19,7 @@ export const Header = () => {
       <Typography
         variant="subtitle1"
         color="text.primary"
-        sx={{ fontWeight: '700' }}
+        sx={{ fontWeight: '700', userSelect: 'none' }}
       >
         JUICYALOE.COM
       </Typography>
