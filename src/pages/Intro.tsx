@@ -2,6 +2,7 @@ import {
   BackGround,
   BottomButtons,
   IntroTextGroup,
+  ModeChangeButton,
 } from '../pages-components/IntroPage';
 import { FullAnimationContainer, AnimationItem } from '../components';
 
@@ -11,6 +12,7 @@ export default function Intro() {
   return (
     <FullAnimationContainer variants={start}>
       <BackGround />
+      <ModeChangeButton />
 
       <AnimationItem variants={wrap}>
         <IntroTextGroup />

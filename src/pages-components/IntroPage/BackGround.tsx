@@ -15,6 +15,4 @@ const BackgroundLottie = styled(Lottie)`
 
   border-radius: 15px 15px 0 0;
   overflow: hidden;
-
-  z-index: -1;
 `;

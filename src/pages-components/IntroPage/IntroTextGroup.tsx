@@ -9,12 +9,18 @@ export const IntroTextGroup = () => {
   return (
     <IntroTextGroupWrapper>
       <AnimationItem variants={item1}>
-        <Typography variant="h6" component="div" sx={{ textAlign: 'center' }}>
+        <Typography
+          variant="h6"
+          component="div"
+          color="text.primary"
+          sx={{ textAlign: 'center' }}
+        >
           마음 편히, 쉴 수 있는 공간
         </Typography>
         <Typography
           variant="h6"
           component="div"
+          color="text.primary"
           sx={{ textAlign: 'center', fontWeight: '700' }}
         >
           JUICYALOE.COM
@@ -25,6 +31,7 @@ export const IntroTextGroup = () => {
         <Typography
           variant="subtitle1"
           component="div"
+          color="text.primary"
           sx={{ textAlign: 'center', pt: '30px' }}
         >
           방문해 주셔서 감사합니다.
@@ -32,6 +39,7 @@ export const IntroTextGroup = () => {
         <Typography
           variant="subtitle1"
           component="div"
+          color="text.primary"
           sx={{ textAlign: 'center' }}
         >
           천천히 구경 후, 방명록을 남겨주세요.
@@ -42,7 +50,7 @@ export const IntroTextGroup = () => {
 };
 
 const IntroTextGroupWrapper = styled.div`
-  padding-top: 50px;
+  padding-top: 70px;
 `;
 
 const item1: Variants = {

@@ -14,7 +14,11 @@ export const BottomButtons = () => {
   return (
     <BottomButtonWrapper>
       <AnimationItem variants={item}>
-        <Button variant="contained" onClick={() => navigate(AppUrl.Main)}>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() => navigate(AppUrl.Main)}
+        >
           구경하기
         </Button>
       </AnimationItem>
@@ -22,6 +26,7 @@ export const BottomButtons = () => {
       <AnimationItem variants={item}>
         <Button
           variant="contained"
+          color="primary"
           onClick={() =>
             (window.location.href =
               'https://github.com/juicyaloe/juicyaloe-main')

@@ -3,9 +3,13 @@ import {
   ReactNode,
   createContext,
   useCallback,
+  useContext,
   useMemo,
   useState,
 } from 'react';
+
+import { LightMode } from './Lightmode';
+import { Darkmode } from './Darkmode';
 
 const MuiContext = createContext<{
   changeMode: () => void;
@@ -27,6 +31,7 @@ export const MuiProvider = ({ children }: { children: ReactNode }) => {
         },
         palette: {
           mode,
+          ...(mode === 'light' ? LightMode : Darkmode),
         },
       }),
     [mode]
@@ -39,4 +44,14 @@ export const MuiProvider = ({ children }: { children: ReactNode }) => {
       <ThemeProvider theme={theme}>{children}</ThemeProvider>
     </MuiContext.Provider>
   );
+};
+
+export const useMode = () => {
+  const context = useContext(MuiContext);
+
+  if (!context) {
+    throw new Error('useMode must be used within a MuiProvider');
+  }
+
+  return context;
 };
