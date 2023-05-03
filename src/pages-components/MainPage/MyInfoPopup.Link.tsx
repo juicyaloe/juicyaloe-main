@@ -18,7 +18,12 @@ export const MyInfoPopupLink = () => {
           <GitHubIcon />
         </CustomIconButton>
 
-        <Typography variant="subtitle2" component="div" color="text.primary">
+        <Typography
+          variant="subtitle2"
+          component="div"
+          color="text.primary"
+          sx={{ userSelect: 'none' }}
+        >
           Juicyaloe Github
         </Typography>
       </RowWrap>
@@ -30,7 +35,12 @@ export const MyInfoPopupLink = () => {
           <LinkIcon />
         </CustomIconButton>
 
-        <Typography variant="subtitle2" component="div" color="text.primary">
+        <Typography
+          variant="subtitle2"
+          component="div"
+          color="text.primary"
+          sx={{ userSelect: 'none' }}
+        >
           개발 블로그
         </Typography>
       </RowWrap>
@@ -44,7 +54,12 @@ export const MyInfoPopupLink = () => {
           <LinkIcon />
         </CustomIconButton>
 
-        <Typography variant="subtitle2" component="div" color="text.primary">
+        <Typography
+          variant="subtitle2"
+          component="div"
+          color="text.primary"
+          sx={{ userSelect: 'none' }}
+        >
           개인 블로그
         </Typography>
       </RowWrap>

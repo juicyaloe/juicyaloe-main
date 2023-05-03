@@ -29,4 +29,6 @@ export const MyInfoPopupText = () => {
   );
 };
 
-const MyInfoPopupTextWrap = styled.div``;
+const MyInfoPopupTextWrap = styled.div`
+  user-select: none;
+`;

@@ -1,9 +1,15 @@
-import { Card } from '@mui/material';
-
-import { FullAnimationContainer, Header } from '../components';
-import { Variants } from 'framer-motion';
 import { useRef, useState } from 'react';
+import { Variants } from 'framer-motion';
+
 import { MyInfoPopup, MyInfoPopupRef } from '../pages-components/MainPage';
+
+import { FullAnimationContainer, Header, NormalCard } from '../components';
+
+import Typography from '@mui/material/Typography';
+
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import BookIcon from '@mui/icons-material/Book';
+import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
 
 export default function Main() {
   const MyInfoPopupRef = useRef<MyInfoPopupRef>(null);
@@ -12,7 +18,29 @@ export default function Main() {
     <FullAnimationContainer variants={start}>
       <Header />
 
-      <Card onClick={() => MyInfoPopupRef.current?.open()}>나</Card>
+      <NormalCard onClick={() => MyInfoPopupRef.current?.open()}>
+        <AccountCircleIcon />
+
+        <Typography variant="h6" component="div" color="text.primary">
+          만든 사람
+        </Typography>
+      </NormalCard>
+
+      <NormalCard>
+        <BookIcon />
+
+        <Typography variant="h6" component="div" color="text.primary">
+          방명록 남기기
+        </Typography>
+      </NormalCard>
+
+      <NormalCard>
+        <SportsEsportsIcon />
+
+        <Typography variant="h6" component="div" color="text.primary">
+          게임 하러가기
+        </Typography>
+      </NormalCard>
 
       <MyInfoPopup ref={MyInfoPopupRef} />
     </FullAnimationContainer>
