@@ -24,7 +24,7 @@ export const useThemeMode = () => {
 
   // localstorage sync
   useEffect(() => {
-    if (!themeMode) {
+    if (themeMode) {
       setItem(themeMode);
     }
 

@@ -1,13 +1,5 @@
 import { createTheme, ThemeProvider } from '@mui/material';
-import {
-  ReactNode,
-  createContext,
-  useCallback,
-  useContext,
-  useMemo,
-  useState,
-  useEffect,
-} from 'react';
+import { ReactNode, createContext, useContext, useMemo } from 'react';
 
 import { LightMode } from './Lightmode';
 import { Darkmode } from './Darkmode';
