@@ -44,6 +44,7 @@ export const WritingForm = ({ onData }: WritingFormProps) => {
           id="nickname"
           label="닉네임"
           variant="standard"
+          color="info"
           error={errors.nickname !== undefined}
           helperText={errors.nickname && errors.nickname?.message}
           InputProps={{

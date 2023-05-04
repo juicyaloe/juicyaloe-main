@@ -10,7 +10,4 @@ export const Darkmode: PaletteOptions = {
   primary: {
     main: Color['dark-primary'],
   },
-  secondary: {
-    main: Color['dark-secondary'],
-  },
 };
