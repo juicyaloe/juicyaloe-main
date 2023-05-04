@@ -64,7 +64,7 @@ export const MyInfoPopup = forwardRef<MyInfoPopupRef>((_, ref) => {
 
 const MyInfoPopupWrapper = styled(motion.div)<{ mode: 'light' | 'dark' }>`
   position: fixed;
-  max-width: ${MobileWidth - 40}px;
+  max-width: ${MobileWidth}px;
   margin: 0 auto;
 
   bottom: 30px;
