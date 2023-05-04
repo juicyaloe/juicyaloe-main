@@ -83,7 +83,7 @@ export const WritingForm = () => {
 
         <SubmitButton
           variant="outlined"
-          color="primary"
+          color="inherit"
           type="submit"
           disabled={isSubmitting}
         >

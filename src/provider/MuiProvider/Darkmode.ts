@@ -7,4 +7,10 @@ export const Darkmode: PaletteOptions = {
     default: Color['white'],
     paper: Color['white'],
   },
+  primary: {
+    main: Color['dark-primary'],
+  },
+  secondary: {
+    main: Color['dark-secondary'],
+  },
 };

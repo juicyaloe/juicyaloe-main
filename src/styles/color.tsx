@@ -4,14 +4,16 @@ export const Color = {
   orange: '#FFA500',
 
   'popup-light': '#e6e6e6',
-  'popup-dark': '#251749',
+  'popup-dark': '#2E2E2E',
 
   'toggle-light': '#D3D3D3',
   'toggle-dark': 'rgba(255, 255, 255, 0.4)',
 
   'card-light': '#fff',
-  'card-dark': '#251749',
+  'card-dark': '#1E1E1E',
 
-  'dark-main': '#635985',
-  'dark-primary': '#1F8A70',
+  'dark-main': '#000',
+
+  'dark-primary': '#393646',
+  'dark-secondary': '#4F4557',
 } as const;
