@@ -31,7 +31,7 @@ export const MyInfoPopup = forwardRef<MyInfoPopupRef>((_, ref) => {
   );
 
   return (
-    <AnimatePresence>
+    <AnimatePresence key="my-info-popup">
       {isOpen && (
         <MyInfoPopupWrapper
           mode={mode}

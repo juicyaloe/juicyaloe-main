@@ -10,12 +10,16 @@ import styled from '@emotion/styled';
 
 import { WritingFormText } from './WritingForm.Text';
 
-interface FormField {
+type WritingFormProps = {
+  onData: (data: FormField) => void;
+};
+
+export interface FormField {
   nickname: string;
   content: string;
 }
 
-export const WritingForm = () => {
+export const WritingForm = ({ onData }: WritingFormProps) => {
   const {
     register,
     setFocus,
@@ -28,7 +32,7 @@ export const WritingForm = () => {
   }, [setFocus]);
 
   const onSubmit = handleSubmit((data) => {
-    console.log(data);
+    onData(data);
   });
 
   return (
