@@ -2,7 +2,11 @@ import { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Variants } from 'framer-motion';
 
-import { MyInfoPopup, MyInfoPopupRef } from '../pages-components/MainPage';
+import {
+  GuestBookView,
+  MyInfoPopup,
+  MyInfoPopupRef,
+} from '../pages-components/MainPage';
 import { FullAnimationContainer, Header, NormalCard } from '../components';
 import { AppUrl } from '../common';
 
@@ -43,6 +47,8 @@ export default function Main() {
           게임 하러가기
         </Typography>
       </NormalCard>
+
+      <GuestBookView />
 
       <MyInfoPopup ref={MyInfoPopupRef} />
     </FullAnimationContainer>
