@@ -1,18 +1,31 @@
+import { useLocation, useNavigate } from 'react-router-dom';
+
 import Typography from '@mui/material/Typography';
 
 import IconButton from '@mui/material/IconButton';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 import styled from '@emotion/styled';
-import { useNavigate } from 'react-router-dom';
+
 import { ChangeModeToggle } from '../ChangeModeToggle';
+import { AppUrl } from '../../common';
 
 export const Header = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const onBack = () => {
+    if (location.pathname === AppUrl.Main) {
+      navigate(AppUrl.Intro);
+      return;
+    }
+
+    navigate(-1);
+  };
 
   return (
     <HeaderWrapper>
-      <IconButton onClick={() => navigate(-1)} sx={{ ml: '4px' }}>
+      <IconButton onClick={onBack} sx={{ ml: '4px' }}>
         <ArrowBackIcon />
       </IconButton>
 
