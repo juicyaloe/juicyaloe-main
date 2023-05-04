@@ -8,7 +8,7 @@ import '@fontsource/noto-sans-kr/400.css';
 import '@fontsource/noto-sans-kr/700.css';
 
 // provider
-import { MuiProvider } from './provider';
+import { MuiProvider, ReactQueryProvider } from './provider';
 import { BrowserRouter } from 'react-router-dom';
 
 // components
@@ -20,7 +20,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <MuiProvider>
     <BrowserRouter>
-      <App />
+      <ReactQueryProvider>
+        <App />
+      </ReactQueryProvider>
     </BrowserRouter>
   </MuiProvider>
 );
