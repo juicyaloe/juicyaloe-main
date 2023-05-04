@@ -12,12 +12,18 @@ export const MobileScreen = ({ children }: { children: ReactNode }) => {
 
 const MobileScreenWrapper = styled.div<{ mode: 'light' | 'dark' }>`
   position: relative;
-  overflow: hidden;
-  height: 100vh;
 
   max-width: 500px;
+  height: 100vh;
+  @supports (-webkit-touch-callout: none) {
+    height: -webkit-fill-available;
+  }
+
   margin: 0 auto;
 
   background-color: ${({ mode }) =>
     mode === 'light' ? Color['white'] : Color['dark-main']};
+
+  // test required
+  overflow: hidden;
 `;
