@@ -7,6 +7,7 @@ import styled from '@emotion/styled';
 
 import { useMode } from '../../provider';
 import { Color } from '../../styles';
+import { ThemeMode } from '../../common';
 
 export const ChangeModeToggle = () => {
   const { mode, changeMode } = useMode();
@@ -34,7 +35,7 @@ export const ChangeModeToggle = () => {
   );
 };
 
-const Toggle = styled.div<{ mode: 'light' | 'dark' }>`
+const Toggle = styled.div<{ mode: ThemeMode }>`
   width: 70px;
   height: 35px;
   border-radius: 17.5px;

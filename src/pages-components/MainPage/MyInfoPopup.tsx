@@ -9,6 +9,7 @@ import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import { Color } from '../../styles';
 import { useMode } from '../../provider';
+import { ThemeMode } from '../../common';
 
 export type MyInfoPopupRef = {
   open: () => void;
@@ -63,7 +64,7 @@ export const MyInfoPopup = forwardRef<MyInfoPopupRef>((_, ref) => {
   );
 });
 
-const MyInfoPopupWrapper = styled(motion.div)<{ mode: 'light' | 'dark' }>`
+const MyInfoPopupWrapper = styled(motion.div)<{ mode: ThemeMode }>`
   position: absolute;
 
   bottom: 30px;

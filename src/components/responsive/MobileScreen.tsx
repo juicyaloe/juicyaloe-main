@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 
 import { useMode } from '../../provider';
 import { Color } from '../../styles';
+import { ThemeMode } from '../../common';
 
 export const MobileScreen = ({ children }: { children: ReactNode }) => {
   const { mode } = useMode();
@@ -10,7 +11,7 @@ export const MobileScreen = ({ children }: { children: ReactNode }) => {
   return <MobileScreenWrapper mode={mode}>{children}</MobileScreenWrapper>;
 };
 
-const MobileScreenWrapper = styled.div<{ mode: 'light' | 'dark' }>`
+const MobileScreenWrapper = styled.div<{ mode: ThemeMode }>`
   position: relative;
 
   max-width: 500px;

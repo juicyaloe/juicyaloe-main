@@ -4,6 +4,7 @@ import { CardActionArea } from '@mui/material';
 import { ReactNode } from 'react';
 import { useMode } from '../../provider';
 import { Color } from '../../styles';
+import { ThemeMode } from '../../common';
 
 type NormalCardProps = {
   onClick?: () => void;
@@ -22,7 +23,7 @@ export const NormalCard = ({ onClick, children }: NormalCardProps) => {
   );
 };
 
-const NormalCardWrapper = styled(Card)<{ mode: 'light' | 'dark' }>`
+const NormalCardWrapper = styled(Card)<{ mode: ThemeMode }>`
   margin: 18px 12px;
 
   background-color: ${({ mode }) =>

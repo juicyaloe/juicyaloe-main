@@ -11,6 +11,7 @@ import {
 } from 'react';
 import { Color } from '../../styles';
 import { useMode } from '../MuiProvider';
+import { ThemeMode } from '../../common';
 
 const PopupContext = createContext<{
   open: (component: JSX.Element) => void;
@@ -83,7 +84,7 @@ const item: Variants = {
   exit: { opacity: 0, scale: 0 },
 };
 
-const PopupWrapper = styled(motion.div)<{ mode: 'light' | 'dark' }>`
+const PopupWrapper = styled(motion.div)<{ mode: ThemeMode }>`
   position: absolute;
 
   bottom: 30px;
