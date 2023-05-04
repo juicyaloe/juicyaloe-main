@@ -68,9 +68,10 @@ const MyInfoPopupWrapper = styled(motion.div)<{ mode: 'light' | 'dark' }>`
   margin: 0 auto;
 
   bottom: 30px;
-  left: 20px;
-  right: 20px;
+  left: 0;
+  right: 0;
 
+  margin: 0 20px;
   padding: 10px;
 
   border-radius: 10px;
