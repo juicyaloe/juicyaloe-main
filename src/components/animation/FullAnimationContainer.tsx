@@ -33,7 +33,11 @@ export const FullAnimationContainer = ({
 };
 
 const FullAnimationView = styled(motion.div)`
+  position: relative;
+
   width: 100%;
   height: 100vh;
-  position: relative;
+  @supports (-webkit-touch-callout: none) {
+    height: -webkit-fill-available;
+  }
 `;
