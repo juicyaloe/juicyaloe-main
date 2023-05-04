@@ -6,22 +6,20 @@ import {
   useContext,
   useMemo,
   useState,
+  useEffect,
 } from 'react';
 
 import { LightMode } from './Lightmode';
 import { Darkmode } from './Darkmode';
+import { ThemeMode, useThemeMode } from '../../common';
 
 const MuiContext = createContext<{
   changeMode: () => void;
-  mode: 'light' | 'dark';
+  mode: ThemeMode;
 } | null>(null);
 
 export const MuiProvider = ({ children }: { children: ReactNode }) => {
-  const [mode, setMode] = useState<'light' | 'dark'>('light');
-
-  const changeMode = useCallback(() => {
-    setMode((prev) => (prev === 'dark' ? 'light' : 'dark'));
-  }, []);
+  const { themeMode, changeThemeMode } = useThemeMode();
 
   const theme = useMemo(
     () =>
@@ -30,14 +28,17 @@ export const MuiProvider = ({ children }: { children: ReactNode }) => {
           fontFamily: "'Noto Sans KR', sans-serif",
         },
         palette: {
-          mode,
-          ...(mode === 'light' ? LightMode : Darkmode),
+          mode: themeMode,
+          ...(themeMode === 'light' ? LightMode : Darkmode),
         },
       }),
-    [mode]
+    [themeMode]
   );
 
-  const context = useMemo(() => ({ changeMode, mode }), [changeMode, mode]);
+  const context = useMemo(
+    () => ({ changeMode: changeThemeMode, mode: themeMode }),
+    [changeThemeMode, themeMode]
+  );
 
   return (
     <MuiContext.Provider value={context}>
