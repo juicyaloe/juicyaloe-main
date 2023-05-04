@@ -9,7 +9,6 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import styled from '@emotion/styled';
 
 import { WritingFormText } from './WritingForm.Text';
-import { MobileWidth } from '../../components';
 
 interface FormField {
   nickname: string;
@@ -114,9 +113,7 @@ const CustomTextField = styled(TextField)`
 `;
 
 const SubmitButton = styled(Button)`
-  position: fixed;
-  max-width: ${MobileWidth}px;
-  margin: 0 auto;
+  position: absolute;
 
   bottom: 30px;
   right: 15px;

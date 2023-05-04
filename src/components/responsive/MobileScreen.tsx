@@ -10,14 +10,12 @@ export const MobileScreen = ({ children }: { children: ReactNode }) => {
   return <MobileScreenWrapper mode={mode}>{children}</MobileScreenWrapper>;
 };
 
-export const MobileWidth = 500;
-
 const MobileScreenWrapper = styled.div<{ mode: 'light' | 'dark' }>`
   position: relative;
   overflow: hidden;
   height: 100vh;
 
-  max-width: ${MobileWidth}px;
+  max-width: 500px;
   margin: 0 auto;
 
   background-color: ${({ mode }) =>

@@ -1,7 +1,7 @@
 import Button from '@mui/material/Button';
 import type { Variants } from 'framer-motion';
 
-import { AnimationItem, MobileWidth } from '../../components';
+import { AnimationItem } from '../../components';
 
 import GitHubIcon from '@mui/icons-material/GitHub';
 import styled from '@emotion/styled';
@@ -41,10 +41,7 @@ export const BottomButtons = () => {
 };
 
 const BottomButtonWrapper = styled.div`
-  position: fixed;
-  max-width: ${MobileWidth}px;
-  margin: 0 auto;
-
+  position: absolute;
   bottom: 35px;
   right: 0;
   left: 0;
