@@ -51,7 +51,11 @@ export const MyInfoPopup = forwardRef<MyInfoPopupRef>((_, ref) => {
           <RowWrap style={{ alignItems: 'stretch' }}>
             <MyInfoPopupLink />
 
-            <img src="/favicon-64x64.png" alt="Aloe" />
+            <img
+              src="/favicon-64x64.png"
+              alt="Aloe"
+              style={{ userSelect: 'none' }}
+            />
           </RowWrap>
         </MyInfoPopupWrapper>
       )}
