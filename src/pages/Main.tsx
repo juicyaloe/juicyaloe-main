@@ -40,7 +40,7 @@ export default function Main() {
         </Typography>
       </NormalCard>
 
-      <NormalCard>
+      <NormalCard onClick={() => navigate(AppUrl.Game)}>
         <SportsEsportsIcon />
 
         <Typography variant="h6" component="div" color="text.primary">

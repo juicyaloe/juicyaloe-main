@@ -10,8 +10,6 @@ export const useThemeMode = () => {
     () => (getItem() as ThemeMode | null) || 'light'
   );
 
-  console.log('themeMode: ', themeMode);
-
   // localstorage init
   useEffect(() => {
     const initThemeMode = getItem() as ThemeMode | null;

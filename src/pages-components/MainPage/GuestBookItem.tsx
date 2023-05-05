@@ -7,14 +7,18 @@ import moment from 'moment';
 import 'moment/locale/ko';
 
 import { GuestBookType } from '../../axios';
+import { useMode } from '../../provider';
+import { ThemeMode } from '../../common';
+import { Color } from '../../styles';
 
 type GuestBookItemProps = {
   item: GuestBookType;
 };
 
 export const GuestBookItem = ({ item }: GuestBookItemProps) => {
+  const { mode } = useMode();
   return (
-    <GuestBookItemWrapper>
+    <GuestBookItemWrapper mode={mode}>
       <Avatar />
 
       <Box>
@@ -51,7 +55,7 @@ export const GuestBookItem = ({ item }: GuestBookItemProps) => {
   );
 };
 
-const GuestBookItemWrapper = styled(Card)`
+const GuestBookItemWrapper = styled(Card)<{ mode: ThemeMode }>`
   padding: 6px;
   margin: 3px 0;
 
@@ -60,6 +64,9 @@ const GuestBookItemWrapper = styled(Card)`
 
   // hard coding
   height: 65px;
+
+  background-color: ${({ mode }) =>
+    mode === 'light' ? Color['card-light'] : Color['card-dark']};
 `;
 
 const Box = styled.div``;
