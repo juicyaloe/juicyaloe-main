@@ -44,6 +44,15 @@ export const GuestBookView = () => {
       </Optional>
 
       <Optional condition={!isLoading && !isError}>
+        <Typography
+          variant="subtitle1"
+          component="div"
+          color="text.primary"
+          sx={{ fontWeight: '700', userSelect: 'none' }}
+        >
+          남겨주신 글:
+        </Typography>
+
         <StyledSlider {...settings}>
           {data?.data.map((guestbook) => (
             <GuestBookItem key={guestbook.id} item={guestbook} />
@@ -68,7 +77,7 @@ const StyledSlider = styled(Slider)`
     width: 100%;
   }
 
-  .slick-slide div {
+  .slick-slide {
     cursor: pointer;
   }
 `;

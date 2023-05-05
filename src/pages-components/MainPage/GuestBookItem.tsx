@@ -37,8 +37,8 @@ export const GuestBookItem = ({ item }: GuestBookItemProps) => {
           color="text.secondary"
           sx={{ wordBreak: 'break-all' }}
         >
-          {item.content.length > 30
-            ? item.content.slice(0, 30) + '...'
+          {item.content.length > 80
+            ? item.content.slice(0, 80) + '...'
             : item.content}
         </Typography>
 
@@ -63,7 +63,7 @@ const GuestBookItemWrapper = styled(Card)<{ mode: ThemeMode }>`
   gap: 6px;
 
   // hard coding
-  height: 65px;
+  height: 90px;
 
   background-color: ${({ mode }) =>
     mode === 'light' ? Color['card-light'] : Color['card-dark']};
