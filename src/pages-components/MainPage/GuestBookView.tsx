@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 import styled from '@emotion/styled';
 
 import { Server, GuestBookType } from '../../axios';
-import { QueryHelper } from '../../components';
+import { Optional } from '../../components';
 import { GuestBookItem } from './GuestBookItem';
 
 export const GuestBookView = () => {
@@ -28,30 +28,28 @@ export const GuestBookView = () => {
 
   return (
     <GuestBookViewContainer>
-      <QueryHelper state={{ isLoading, isError }}>
-        <QueryHelper.Loading>
-          <Typography variant="subtitle1" component="div" color="text.primary">
-            방명록을 불러오는 중입니다..
-          </Typography>
-        </QueryHelper.Loading>
+      <Optional condition={isLoading}>
+        <Typography variant="subtitle1" component="div" color="text.primary">
+          방명록을 불러오는 중입니다..
+        </Typography>
+      </Optional>
 
-        <QueryHelper.Error>
-          <Typography variant="subtitle1" component="div" color="text.primary">
-            일시적인 오류로 방명록을 불러오는데 실패했습니다.
-          </Typography>
-          <Typography variant="subtitle1" component="div" color="text.primary">
-            잠시 후에 시도해주세요.
-          </Typography>
-        </QueryHelper.Error>
+      <Optional condition={isError}>
+        <Typography variant="subtitle1" component="div" color="text.primary">
+          일시적인 오류로 방명록을 불러오는데 실패했습니다.
+        </Typography>
+        <Typography variant="subtitle1" component="div" color="text.primary">
+          잠시 후에 시도해주세요.
+        </Typography>
+      </Optional>
 
-        <QueryHelper.Main>
-          <StyledSlider {...settings}>
-            {data?.data.map((guestbook) => (
-              <GuestBookItem key={guestbook.id} item={guestbook} />
-            ))}
-          </StyledSlider>
-        </QueryHelper.Main>
-      </QueryHelper>
+      <Optional condition={!isLoading && !isError}>
+        <StyledSlider {...settings}>
+          {data?.data.map((guestbook) => (
+            <GuestBookItem key={guestbook.id} item={guestbook} />
+          ))}
+        </StyledSlider>
+      </Optional>
     </GuestBookViewContainer>
   );
 };
