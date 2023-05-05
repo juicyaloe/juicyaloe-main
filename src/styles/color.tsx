@@ -15,4 +15,6 @@ export const Color = {
   'dark-main': '#000',
 
   'dark-primary': '#393646',
+  'dark-secondary': '#fff',
+  'dark-info': '#fff',
 } as const;
