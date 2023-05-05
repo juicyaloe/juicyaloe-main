@@ -24,7 +24,4 @@ const MobileScreenWrapper = styled.div<{ mode: ThemeMode }>`
 
   background-color: ${({ mode }) =>
     mode === 'light' ? Color['white'] : Color['dark-main']};
-
-  // test required
-  overflow: hidden;
 `;
