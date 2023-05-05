@@ -1,55 +1,76 @@
-import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
-import { Card } from '@mui/material';
-import styled from '@emotion/styled';
 import { useQuery } from '@tanstack/react-query';
-import { GuestBookType, Server } from '../../axios';
+import Slider, { Settings } from 'react-slick';
+
+import Typography from '@mui/material/Typography';
+import styled from '@emotion/styled';
+
+import { Server, GuestBookType } from '../../axios';
+import { QueryHelper } from '../../components';
+import { GuestBookItem } from './GuestBookItem';
 
 export const GuestBookView = () => {
-  const { data, isError, isLoading } = useQuery(['guestbook'], () =>
+  const { data, isLoading, isError } = useQuery(['guestbook'], () =>
     Server.get<GuestBookType[]>('/guestbook/public/')
   );
 
-  console.log('data: ', data);
+  const settings: Settings = {
+    slidesToShow: 3,
+    speed: 1000,
+
+    infinite: true,
+    vertical: true,
+    verticalSwiping: true,
+    swipeToSlide: true,
+
+    autoplay: true,
+    autoplaySpeed: 3000,
+  };
 
   return (
     <GuestBookViewContainer>
-      <Typography
-        variant="subtitle2"
-        component="div"
-        color="text.primary"
-        sx={{ py: 1 }}
-      >
-        HMC NETWORKS.&nbsp;
-        <Typography variant="subtitle2" component="span" color="text.secondary">
-          (2022.12 ~ 2023.3)
-        </Typography>
-      </Typography>
+      <QueryHelper state={{ isLoading, isError }}>
+        <QueryHelper.Loading>
+          <Typography variant="subtitle1" component="div" color="text.primary">
+            방명록을 불러오는 중입니다..
+          </Typography>
+        </QueryHelper.Loading>
 
-      <Divider />
+        <QueryHelper.Error>
+          <Typography variant="subtitle1" component="div" color="text.primary">
+            일시적인 오류로 방명록을 불러오는데 실패했습니다.
+          </Typography>
+          <Typography variant="subtitle1" component="div" color="text.primary">
+            잠시 후에 시도해주세요.
+          </Typography>
+        </QueryHelper.Error>
 
-      <Typography variant="subtitle2" component="div" color="text.primary">
-        HMC NETWORKS.&nbsp;
-        <Typography variant="subtitle2" component="span" color="text.secondary">
-          (2022.12 ~ 2023.3)
-        </Typography>
-      </Typography>
-
-      <Divider />
-
-      <Typography variant="subtitle2" component="div" color="text.primary">
-        HMC NETWORKS.&nbsp;
-        <Typography variant="subtitle2" component="span" color="text.secondary">
-          (2022.12 ~ 2023.3)
-        </Typography>
-      </Typography>
+        <QueryHelper.Main>
+          <StyledSlider {...settings}>
+            {data?.data.map((guestbook) => (
+              <GuestBookItem key={guestbook.id} item={guestbook} />
+            ))}
+          </StyledSlider>
+        </QueryHelper.Main>
+      </QueryHelper>
     </GuestBookViewContainer>
   );
 };
 
-const GuestBookViewContainer = styled(Card)`
+const GuestBookViewContainer = styled.div`
   margin: 0 12px;
   margin-top: 24px;
+`;
 
-  padding: 9px;
+const StyledSlider = styled(Slider)`
+  button {
+    display: none !important;
+  }
+
+  .slick-list {
+    width: 100%;
+  }
+
+  .slick-slide div {
+    cursor: pointer;
+  }
 `;
