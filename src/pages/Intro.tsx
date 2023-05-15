@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import { useQueryClient } from '@tanstack/react-query';
 import {
   BackGround,
   BottomButtons,
@@ -7,8 +9,17 @@ import {
 import { FullAnimationContainer, AnimationItem } from '../components';
 
 import type { Variants } from 'framer-motion';
+import { Server } from '../axios';
 
 export default function Intro() {
+  const queryClient = useQueryClient();
+
+  useEffect(() => {
+    queryClient.prefetchQuery(['guestbook'], () =>
+      Server.get('/guestbook/public/')
+    );
+  }, [queryClient]);
+
   return (
     <FullAnimationContainer variants={start}>
       <BackGround />
