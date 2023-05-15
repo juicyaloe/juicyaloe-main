@@ -4,7 +4,7 @@ export const Color = {
   orange: '#FFA500',
 
   'popup-light': '#e6e6e6',
-  'popup-dark': '#2E2E2E',
+  'popup-dark': '#3E3E3E',
 
   'toggle-light': '#D3D3D3',
   'toggle-dark': 'rgba(255, 255, 255, 0.4)',
