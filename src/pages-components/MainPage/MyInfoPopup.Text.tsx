@@ -5,7 +5,7 @@ export const MyInfoPopupText = () => {
   return (
     <MyInfoPopupTextWrap>
       <Typography variant="subtitle1" component="div" color="text.primary">
-        🇰🇷{')'} KIM MIN-JAE, Frontend Devloper
+        🇰🇷{')'} KIM MIN-JAE
       </Typography>
       <Typography variant="subtitle2" component="div" color="text.primary">
         - Seoul National University&nbsp;
@@ -22,7 +22,7 @@ export const MyInfoPopupText = () => {
       <Typography variant="subtitle2" component="div" color="text.primary">
         - AIMED.&nbsp;
         <Typography variant="subtitle2" component="span" color="text.secondary">
-          (2023.3 ~ current)
+          (2023.3 ~ 2023.5)
         </Typography>
       </Typography>
     </MyInfoPopupTextWrap>
