@@ -23,7 +23,7 @@ export default function MyInfo() {
         color="text.primary"
         sx={{ mx: '12px', mt: '18px' }}
       >
-        소개 페이지로 이동 중입니다.
+        노션 페이지로 이동 중입니다.
       </Typography>
 
       <RowWrap>
@@ -38,7 +38,7 @@ export default function MyInfo() {
         </CustomIconButton>
 
         <Typography variant="subtitle1" component="div" color="text.primary">
-          을 눌러주세요.
+          버튼을 눌러주세요.
         </Typography>
       </RowWrap>
     </>
