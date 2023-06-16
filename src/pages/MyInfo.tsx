@@ -6,8 +6,13 @@ import styled from '@emotion/styled';
 
 import { Header } from '../components';
 import { OutUrl } from '../common';
+import { useEffect } from 'react';
 
 export default function MyInfo() {
+  useEffect(() => {
+    window.open(OutUrl.notion);
+  }, []);
+
   return (
     <>
       <Header />
