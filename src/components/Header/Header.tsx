@@ -20,6 +20,11 @@ export const Header = () => {
       return;
     }
 
+    if (location.pathname === AppUrl.MyInfo) {
+      navigate(AppUrl.Main);
+      return;
+    }
+
     navigate(-1);
   };
 
