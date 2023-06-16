@@ -38,7 +38,7 @@ export default function MyInfo() {
         </CustomIconButton>
 
         <Typography variant="subtitle1" component="div" color="text.primary">
-          을 눌려주세요.
+          을 눌러주세요.
         </Typography>
       </RowWrap>
     </>
