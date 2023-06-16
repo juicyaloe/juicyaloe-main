@@ -6,7 +6,7 @@ import { AnimationItem } from '../../components';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import styled from '@emotion/styled';
 import { useNavigate } from 'react-router-dom';
-import { AppUrl } from '../../common';
+import { AppUrl, OutUrl } from '../../common';
 
 export const BottomButtons = () => {
   const navigate = useNavigate();
@@ -28,8 +28,7 @@ export const BottomButtons = () => {
           variant="contained"
           color="primary"
           onClick={() =>
-            (window.location.href =
-              'https://github.com/juicyaloe/juicyaloe-main')
+            (window.location.href = OutUrl['github-juicyaloe-main'])
           }
           startIcon={<GitHubIcon />}
         >

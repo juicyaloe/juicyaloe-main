@@ -5,6 +5,7 @@ import LinkIcon from '@mui/icons-material/Link';
 import styled from '@emotion/styled';
 
 import { Header } from '../components';
+import { OutUrl } from '../common';
 
 export default function MyInfo() {
   return (
@@ -26,10 +27,7 @@ export default function MyInfo() {
         </Typography>
 
         <CustomIconButton
-          onClick={() =>
-            (window.location.href =
-              'https://sudden-cut-61a.notion.site/2aba877f43f44e4788244e1fca0dec56?pvs=4')
-          }
+          onClick={() => (window.location.href = OutUrl.notion)}
         >
           <LinkIcon />
         </CustomIconButton>

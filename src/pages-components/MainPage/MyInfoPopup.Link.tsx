@@ -5,15 +5,17 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkIcon from '@mui/icons-material/Link';
 
 import styled from '@emotion/styled';
+import { AppUrl, OutUrl } from '../../common';
+import { useNavigate } from 'react-router-dom';
 
 export const MyInfoPopupLink = () => {
+  const navigate = useNavigate();
+
   return (
     <MyInfoPopupLinkWrap>
       <RowWrap>
         <CustomIconButton
-          onClick={() =>
-            (window.location.href = 'https://github.com/juicyaloe')
-          }
+          onClick={() => (window.location.href = OutUrl.github)}
         >
           <GitHubIcon />
         </CustomIconButton>
@@ -24,14 +26,12 @@ export const MyInfoPopupLink = () => {
           color="text.primary"
           sx={{ userSelect: 'none' }}
         >
-          Juicyaloe Github
+          GITHUB
         </Typography>
       </RowWrap>
 
       <RowWrap>
-        <CustomIconButton
-          onClick={() => (window.location.href = 'https://velog.io/@juicyaloe')}
-        >
+        <CustomIconButton onClick={() => navigate(AppUrl.MyInfo)}>
           <LinkIcon />
         </CustomIconButton>
 
@@ -41,26 +41,7 @@ export const MyInfoPopupLink = () => {
           color="text.primary"
           sx={{ userSelect: 'none' }}
         >
-          개발 블로그
-        </Typography>
-      </RowWrap>
-
-      <RowWrap>
-        <CustomIconButton
-          onClick={() =>
-            (window.location.href = 'https://blog.naver.com/juicyaloe')
-          }
-        >
-          <LinkIcon />
-        </CustomIconButton>
-
-        <Typography
-          variant="subtitle2"
-          component="div"
-          color="text.primary"
-          sx={{ userSelect: 'none' }}
-        >
-          개인 블로그
+          자세한 정보
         </Typography>
       </RowWrap>
     </MyInfoPopupLinkWrap>
