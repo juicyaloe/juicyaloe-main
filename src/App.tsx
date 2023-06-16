@@ -11,6 +11,7 @@ import Intro from './pages/Intro';
 import Main from './pages/Main';
 import GuestBookForm from './pages/GuestBookForm';
 import Game from './pages/Game';
+import MyInfo from './pages/MyInfo';
 
 function App() {
   const location = useLocation();
@@ -26,6 +27,7 @@ function App() {
               <Route path={AppUrl.Main} element={<Main />} />
               <Route path={AppUrl.GuestBookForm} element={<GuestBookForm />} />
               <Route path={AppUrl.Game} element={<Game />} />
+              <Route path={AppUrl.MyInfo} element={<MyInfo />} />
 
               <Route path="*" element={<Navigate to={AppUrl.Intro} />} />
             </Routes>
